@@ -17,7 +17,7 @@ public class JdbcConnector implements Connector{
             String username = "root";
             String password = "password";
             Class.forName(driver);
-            String dataBaseName = ""; //todo: rename database
+            String dataBaseName = "bookstore";
             Properties properties = new Properties();
             properties.setProperty("user", username);
             properties.setProperty("password", password);
