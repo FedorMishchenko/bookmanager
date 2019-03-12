@@ -26,7 +26,7 @@ public class BookService implements Service<Book> {
     }
 
     @Override
-    public Book delete(Book object) {
-        return null;
+    public void delete(Book object) {
+
     }
 }

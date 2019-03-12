@@ -10,7 +10,7 @@ import java.util.Objects;
 public class UserDto implements EntityDto {
     private String login;
     private Integer id;
-    private List<Order> orders;
+    private Integer order;
 
     public String getLogin() {
         return login;
@@ -30,12 +30,12 @@ public class UserDto implements EntityDto {
         return this;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public Integer getOrders() {
+        return order;
     }
 
-    public UserDto setOrders(List<Order> orders) {
-        this.orders = orders;
+    public UserDto setOrders(Integer order) {
+        this.order = order;
         return this;
     }
 
@@ -59,7 +59,7 @@ public class UserDto implements EntityDto {
         final StringBuilder sb = new StringBuilder("UserDto{");
         sb.append("login='").append(login).append('\'');
         sb.append(", id=").append(id);
-        sb.append(", orders=").append(orders);
+        sb.append(", orders=").append(order);
         sb.append('}');
         return sb.toString();
     }

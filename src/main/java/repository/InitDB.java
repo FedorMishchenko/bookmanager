@@ -9,18 +9,18 @@ public class InitDB {
             "CREATE TABLE IF NOT EXISTS users(" +
             "id INT AUTO_INCREMENT," +
             "login VARCHAR(50) NOT NULL," +
-            "order INT" +
+            "'order' INT" +
             "CONSTRAINT users_pk PRIMARY KEY(id)" +
             ");";
 
     public static final String CREATE_BOOK_TABLE =
             "CREATE TABLE IF NOT EXISTS books(" +
             "id INT AUTO_INCREMENT," +
-            "name VARCHAR(50) NOT NULL," +
+            "'name' VARCHAR(50) NOT NULL," +
             "author VARCHAR(50) NOT NULL," +
             "price DECIMAL NOT NULL" +
             "CONSTRAINT books_pk PRIMARY KEY(id)" +
-            ");";
+            "); ";
 
     public static final String CREATE_ORDER_TABLE =
             "CREATE TABLE IF NOT EXISTS orders(" +
@@ -33,9 +33,9 @@ public class InitDB {
                     "FOREIGN KEY (bookID) REFERENCES books (id)" +
                     "CONSTRAINT orders_users_id_fk " +
                     "FOREIGN KEY (userID) REFERENCES users (id)" +
-                    ");" + '\n' +
+                    "); " +
                     "CREATE UNIQUE INDEX orders_id_uindex " +
-                    "ON orders (id) " + '\n' +
+                    "ON orders (id) " +
                     "ALTER TABLE orders " +
                     "ADD CONSTRAINT orders_pk " +
                     "PRIMARY KEY (id)";

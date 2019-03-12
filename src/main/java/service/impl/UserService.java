@@ -26,7 +26,7 @@ public class UserService implements Service<User> {
     }
 
     @Override
-    public User delete(User object) {
-        return null;
+    public void delete(User object) {
+
     }
 }

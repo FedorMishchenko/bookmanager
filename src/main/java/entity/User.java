@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class User {
     private String login;
-    private List<Order> orders;
+    private Integer order;
     private Integer id;
 
     public String getLogin() {
@@ -19,12 +19,12 @@ public class User {
         return this;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public Integer getOrder() {
+        return order;
     }
 
-    public User setOrders(List<Order> orders) {
-        this.orders = orders;
+    public User setOrder(Integer order) {
+        this.order = order;
         return this;
     }
 
@@ -44,7 +44,7 @@ public class User {
         if (!(o instanceof User)) return false;
         User user = (User) o;
         return getLogin().equals(user.getLogin()) &&
-                Objects.equals(getOrders(), user.getOrders()) &&
+                Objects.equals(getOrder(), user.getOrder()) &&
                 getId().equals(user.getId());
     }
 
@@ -57,7 +57,7 @@ public class User {
     public String toString() {
         final StringBuilder sb = new StringBuilder("User{");
         sb.append("login='").append(login).append('\'');
-        sb.append(", orders=").append(orders);
+        sb.append(", orders=").append(order);
         sb.append(", id=").append(id);
         sb.append('}');
         return sb.toString();
