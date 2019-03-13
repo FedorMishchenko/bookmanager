@@ -1,12 +1,14 @@
 package dto.dtohandler;
 
 
+import controller.Controller;
+import controller.impl.OrderController;
 import dto.impl.OrderDto;
 import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
-public class OrderDtoHandler extends DtoHandler{
+public class OrderDtoHandler extends DtoHandler<OrderDto, OrderController>{
     private static final Logger log = Logger.getLogger(OrderDtoHandler.class);
     private static Scanner scanner = new Scanner(System.in);
 
@@ -17,5 +19,10 @@ public class OrderDtoHandler extends DtoHandler{
         log.info("Enter user id:");
         Integer userId = scanner.nextInt();
         return new OrderDto().setBookId(bookId).setUserId(userId);
+    }
+
+    @Override
+    public OrderDto transfer(OrderController controller) {
+        return null;
     }
 }

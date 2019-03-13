@@ -22,16 +22,30 @@ public class UserService implements Service<User> {
 
     @Override
     public User get(User object) {
-        return null;
+
+        try {
+            return userDao.get(object);
+        }catch (Exception e){
+            throw new MyApplicationException("Exception in UserService get", e);
+        }
     }
 
     @Override
     public User update(User oldObject, User newObject) {
-        return null;
+
+        try {
+            return userDao.update(oldObject, newObject);
+        }catch (Exception e){
+            throw new MyApplicationException("Exception in UserService update", e);
+        }
     }
 
     @Override
     public void delete(User object) {
-
+        try {
+            userDao.delete(object);
+        }catch (Exception e){
+            throw new MyApplicationException("Exception in UserService delete", e);
+        }
     }
 }
