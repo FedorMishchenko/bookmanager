@@ -5,9 +5,19 @@ import org.jetbrains.annotations.Contract;
 import java.util.Objects;
 
 public class Order {
-    private Integer bookId;
-    private Integer userId;
     private Integer id;
+    private Integer userId;
+    private Integer bookId;
+    private Book book;
+
+    public Book getBook() {
+        return book;
+    }
+
+    public Order setBook(Book book) {
+        this.book = book;
+        return this;
+    }
 
     public Integer getBookId() {
         return bookId;
@@ -54,9 +64,10 @@ public class Order {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Order{");
-        sb.append("bookId=").append(bookId);
-        sb.append(", userId=").append(userId);
-        sb.append(", id=").append(id);
+        sb.append("id=").append(id);
+        sb.append(", userId=").append(bookId);
+        sb.append(", bookId=").append(userId);
+        sb.append(book.toString());
         sb.append('}');
         return sb.toString();
     }

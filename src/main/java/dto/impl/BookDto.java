@@ -6,10 +6,10 @@ import org.jetbrains.annotations.Contract;
 import java.util.Objects;
 
 public class BookDto implements EntityDto {
+    private Integer id;
     private String name;
     private String author;
     private Double price;
-    private Integer id;
 
     public String getName() {
         return name;
@@ -66,10 +66,10 @@ public class BookDto implements EntityDto {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("BookDto{");
-        sb.append("name='").append(name).append('\'');
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
         sb.append(", author='").append(author).append('\'');
         sb.append(", price=").append(price);
-        sb.append(", id=").append(id);
         sb.append('}');
         return sb.toString();
     }

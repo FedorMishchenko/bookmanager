@@ -1,14 +1,25 @@
 package dto.impl;
 
 import dto.EntityDto;
+import entity.Book;
 import org.jetbrains.annotations.Contract;
 
 import java.util.Objects;
 
 public class OrderDto implements EntityDto {
-    private Integer bookId;
-    private Integer userId;
     private Integer id;
+    private Integer userId;
+    private Integer bookId;
+    private Book book;
+
+    public Book getBook() {
+        return book;
+    }
+
+    public OrderDto setBook(Book book) {
+        this.book = book;
+        return this;
+    }
 
     public Integer getBookId() {
         return bookId;
@@ -55,9 +66,10 @@ public class OrderDto implements EntityDto {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("OrderDto{");
-        sb.append("bookId=").append(bookId);
+        sb.append("id=").append(id);
         sb.append(", userId=").append(userId);
-        sb.append(", id=").append(id);
+        sb.append(", bookId=").append(bookId);
+        sb.append(book.toString());
         sb.append('}');
         return sb.toString();
     }

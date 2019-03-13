@@ -1,15 +1,13 @@
 package dto.impl;
 
 import dto.EntityDto;
-import entity.Order;
 import org.jetbrains.annotations.Contract;
 
-import java.util.List;
 import java.util.Objects;
 
 public class UserDto implements EntityDto {
-    private String login;
     private Integer id;
+    private String login;
     private Integer order;
 
     public String getLogin() {
@@ -57,9 +55,9 @@ public class UserDto implements EntityDto {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("UserDto{");
-        sb.append("login='").append(login).append('\'');
-        sb.append(", id=").append(id);
-        sb.append(", orders=").append(order);
+        sb.append("id=").append(id);
+        sb.append(", login='").append(login).append('\'');
+        sb.append(", order=").append(order);
         sb.append('}');
         return sb.toString();
     }

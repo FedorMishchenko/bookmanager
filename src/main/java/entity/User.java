@@ -2,13 +2,13 @@ package entity;
 
 import org.jetbrains.annotations.Contract;
 
-import java.util.List;
 import java.util.Objects;
 
 public class User {
+    private Integer id;
     private String login;
     private Integer order;
-    private Integer id;
+
 
     public String getLogin() {
         return login;
@@ -56,9 +56,10 @@ public class User {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("User{");
-        sb.append("login='").append(login).append('\'');
-        sb.append(", orders=").append(order);
-        sb.append(", id=").append(id);
+        sb.append("id=").append(id);
+        sb.append(", login='").append(login).append('\'');
+        sb.append(", order=").append(order);
+
         sb.append('}');
         return sb.toString();
     }

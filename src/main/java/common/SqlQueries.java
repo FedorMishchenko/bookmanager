@@ -28,11 +28,14 @@ public class SqlQueries {
 /*
 ---------------------------------------------------------
 */
-    public static final String CREATE_ORDER = "INSERT INTO orders (bookID, userID) VALUES " +
+    public static final String CREATE_ORDER = "INSERT INTO orders (userID, bookID) VALUES " +
         "(?, ?)";
-    public static final String GET_ORDER = "SELECT id, bookID FROM orders WHERE userID = ?";
-    public static final String UPDATE_ORDER = "UPDATE orders SET bookID = ? WHERE userID = ?";
-    public static final String DELETE_ORDER = "DELETE FROM orders WHERE id = ?";
+    public static final String GET_ORDER = "SELECT id, userId, bookID FROM orders" +
+            " WHERE userID = ?";
+    public static final String UPDATE_ORDER = "UPDATE orders SET id = ?, uderID = ?, bookID = ? " +
+            "WHERE userID = ?";
+    public static final String DELETE_ORDER = "DELETE FROM orders WHERE" +
+            " id = ?";
     public static final String GET_ALL_ORDERS = "SELECT * FROM orders";
 
 /*
