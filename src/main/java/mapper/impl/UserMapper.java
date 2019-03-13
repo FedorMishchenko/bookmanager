@@ -12,6 +12,7 @@ public class UserMapper implements Mapper<UserDto, User> {
 
     @Override
     public UserDto mapToDto(User object) {
+
         return new UserDto();
     }
 }

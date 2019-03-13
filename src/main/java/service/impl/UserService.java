@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.UserDao;
 import entity.User;
+import exceptions.MyApplicationException;
 import service.Service;
 
 public class UserService implements Service<User> {
@@ -12,7 +13,11 @@ public class UserService implements Service<User> {
 
     @Override
     public User create(User object) {
-        return null;
+        try {
+            return userDao.create(object);
+        }catch (Exception e){
+            throw new MyApplicationException("Exception in UserService create", e);
+        }
     }
 
     @Override
